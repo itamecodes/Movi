@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView 
+        android:layout_width="@dimen/casticonwidth"
+        android:layout_height="@dimen/casticonwidth"
+        android:id="@+id/thecharactericon"
+        android:contentDescription="@string/thumb"
+          android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:layout_width="@dimen/casticonwidth"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/casttextsize"
+    android:id="@+id/thecharactername"
+    android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="false"
+        android:layout_centerInParent="false"
+        android:background="#88000000"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        />
+  
+      <ProgressBar 
+			android:id="@+id/progressBarcharacter"	
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true" 
+			android:visibility="gone"
+			 android:indeterminate="true"
+			
+		/>
+
+</RelativeLayout>

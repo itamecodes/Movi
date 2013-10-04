@@ -1,0 +1,81 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.itamecodes.moviepot"
+    android:versionCode="2"
+    android:versionName="1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+         android:name=".mainapp.ITCApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Moviestyleactionbar" 
+       
+        >
+        <activity
+            android:name=".mainapp.MainActivity"
+            android:label="@string/title_activity_main" >
+              <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="Home" />
+        </activity>
+         <activity
+            android:name=".mainapp.MovieDetailActivityNew"
+            android:label="@string/movie_detail_activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".mainapp.MainActivity" />
+        </activity>
+         <activity  
+                android:name="com.keyes.youtube.OpenYouTubePlayerActivity"  
+                android:screenOrientation="landscape"
+                android:configChanges="orientation"
+                android:theme="@android:style/Theme.Black"
+                android:label="@string/app_name">  
+        </activity>
+         <activity 
+             android:name=".mainapp.CelebrityDetailActivity"
+              android:label="@string/celebrity_detail_activity"
+             >
+             
+         </activity> 
+         <activity 
+             android:name=".mainapp.PlayVideoActivity"
+             android:screenOrientation="landscape"  
+              android:label="@string/celebrity_detail_activity"
+             >
+             
+         </activity> 
+          <activity 
+             android:name=".mainapp.SimilarMovieActivity"
+              android:label="@string/celebrity_detail_activity"
+             >
+             
+         </activity>
+         <activity 
+             android:name=".mainapp.SearchActivity"
+              android:label="@string/celebrity_detail_activity"
+             >
+             
+         </activity>
+         <activity android:name=".mainapp.ReviewsActivity"
+             
+             ></activity>
+          <activity android:name=".mainapp.AboutActivity"
+              android:screenOrientation="portrait"
+             
+             ></activity>
+    </application>
+
+</manifest>

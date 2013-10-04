@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">movi!</string>
+    <string name="title_section4">Now Playing</string>
+    <string name="title_section3">Top Rated</string>
+    <string name="title_section2">Popular Movies</string>
+    <string name="title_section1">Upcoming Movies</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">movi!</string>
+    <string name="thumb">moviethumbnail</string>
+    <string name="search_title">Search Movies</string>
+    <string name="about">About</string>
+    <string name="movie_detail_activity">Movie Detail</string>
+    <string name="cast">Cast &amp; Crew</string>
+    <string name="movie">Movie</string>
+    <string name="gallery">Gallery</string>
+    <string name="celebrity">Celebrity</string>
+    <string name="credits">Credits</string>
+    <string name="celebrity_detail_activity">Celebrity Detail</string>
+    <string name="viewtrailer">View Trailer</string>
+    <string name="viewreviews">Reviews</string>
+    <string name="viewsimil">View Similar</string>
+    <string name="aboutpage">This product uses the TMDb API but is not endorsed or certified by TMDb</string>
+    <string name="rottentomatoes">The reviews used in the app are provided by using the Rotten Tomatoes API</string>
+
+</resources>

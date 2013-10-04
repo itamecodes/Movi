@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <bool name="isLargeTablet">false</bool>
+    <item type="layout" name="themoviedetail">@layout/themoviedetailland</item>
+    <item type="layout" name="celebritydetail">@layout/celebritydetailland</item>
+    <item type="layout" name="reviewdetail">@layout/reviewdetailland</item>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+     android:background="@drawable/mygradient">
+     <ImageView
+         android:layout_centerHorizontal="true"
+         android:id="@+id/tmdblog"
+         android:layout_width="100dp"
+         android:layout_height="100dp" 
+     	 android:src="@drawable/tmdblog"
+     	 />    
+     <TextView
+        android:id="@+id/abouttext"
+        android:text="@string/aboutpage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white1"
+        android:layout_below="@id/tmdblog"
+        />
+     <ImageView
+         android:layout_centerHorizontal="true"
+         android:id="@+id/rtmlog"
+         android:layout_width="100dp"
+         android:layout_height="100dp" 
+     	 android:src="@drawable/rtlogo"
+     	 android:layout_below="@id/abouttext"
+     	 />    
+     <TextView
+        android:id="@+id/abouttext2"
+        android:text="@string/rottentomatoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white1"
+        android:layout_below="@id/rtmlog"
+        />
+
+</RelativeLayout>

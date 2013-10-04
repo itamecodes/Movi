@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+       <TextView
+         android:layout_centerHorizontal="true"
+         android:id="@+id/rtmlogo2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" 
+         android:text="@string/rottentomatoes"
+         android:textColor="#330000"
+         android:lineSpacingMultiplier="1.3"
+     	 
+     	 />    
+    
+    
+        <TextView
+            android:layout_width="@dimen/landconsensuswidth"
+        	android:layout_height="wrap_content"
+        	android:id="@+id/thereviewsynop"
+        	android:textSize="@dimen/thereviewconsensussize"
+        	android:textStyle="italic"
+        	android:paddingLeft="4dp"
+        	android:gravity="center_horizontal"
+			android:visibility="gone"    
+			android:layout_below="@id/rtmlogo2" 
+        	
+        	            ></TextView>
+        
+        <ListView 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/thereviewlist"
+            android:layout_toRightOf="@id/thereviewsynop"
+            android:divider="#33b5e5"
+            android:dividerHeight="1dp"
+            android:layout_below="@id/rtmlogo2" 
+            ></ListView>
+        
+        
+    
+   
+         
+         
+  
+       <ProgressBar 
+			android:id="@+id/progressBarreview"	
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:visibility="gone"
+			 android:indeterminate="true"
+			
+		/>
+     
+    
+     
+ 
+</RelativeLayout>

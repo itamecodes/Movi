@@ -1,0 +1,63 @@
+<resources>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="viewpagertextsize">16sp</dimen>
+   
+    <dimen name="listtextsize">15sp</dimen>
+    
+    <dimen name="genrefragwidth">150dp</dimen>
+    <dimen name="genrefragleftmargin">10dp</dimen>
+    <dimen name="genrefragtoppadding">10dp</dimen>
+    
+   
+       <dimen name="iconwidth">60dp</dimen>
+       <dimen name="image_thumbnail_spacing">5dp</dimen>
+       <dimen name="captionforgridelement">12sp</dimen>
+       
+       
+       
+     <dimen name="youtubeimage">220dp</dimen>
+     <dimen name="youtubeimageheight">100dp</dimen>
+     <dimen name="moviedetailheadings">10sp</dimen>
+     <dimen name="youtubeimagename">10sp</dimen>
+      <dimen name="captiontextsize">15sp</dimen>
+     <dimen name="moviedesctextsize">12sp</dimen>
+     
+     
+     <dimen name="marginbelowyoutubeimage">8dp</dimen>
+     
+     <dimen name="captionlabelwidth">200dp</dimen>
+     
+          <dimen name="celebrityimage">104dp</dimen>
+     <dimen name="celebrityimageheight">158dp</dimen>
+     <dimen name="galleryimagewidth">80dp</dimen>
+     
+     <dimen name="scrollviewheight">100dp</dimen>
+     <dimen name="genregridwidth">300dp</dimen>
+     <dimen name="genregridtextsize">10sp</dimen>
+     
+     <!-- the width of the container showing the cast scroll -->
+     
+     <dimen name="detailiconwidth">95dp</dimen>
+     <dimen name="detailiconleftmargin">5dp</dimen>
+     <!-- every element in the cast list -->
+    <dimen name="castviewwidth">95dp</dimen>
+    <!-- the cast icon width -->
+    <dimen name="casticonwidth">60dp</dimen>
+    <dimen name="casticonheight">125dp</dimen>
+    <dimen name="casttextsize">10sp</dimen>
+    <dimen name="casttextpaddingleft">2dp</dimen>
+    <!-- character list spaces between the two texts -->
+    <dimen name="charactermoviemarginbetween">15dp</dimen>
+    <dimen name="characternamemargintop">10dp</dimen>
+    <dimen name="textsizemoviedesc">13sp</dimen>
+    
+    <dimen name="celebritydetailtextwidth">190dp</dimen>
+    <dimen name="charactersmoviegrid">200dp</dimen>
+    <dimen name="celebritydescription">200dp</dimen>
+    <dimen name="thedescgridspace">20dp</dimen>
+    <dimen name="landconsensuswidth">100dp</dimen>
+    
+</resources>

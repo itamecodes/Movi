@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+    
+
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView
+        android:layout_width="@dimen/celebrityimage"
+        android:layout_height="wrap_content"
+        android:id="@+id/thecelebrityimage"
+        android:contentDescription="@string/thumb"
+          android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:paddingLeft="4dp"
+        
+        />
+    <TextView
+        android:id="@+id/thecelebrityname"
+        android:layout_width="@dimen/celebrityimage"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/thecelebrityimage"
+        android:background="#88000000"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:layout_alignLeft="@id/thecelebrityimage"
+        android:paddingLeft="4dp"
+        android:layout_centerInParent="false"
+        android:textSize="@dimen/captiontextsize" 
+         android:visibility="invisible"
+        />
+    
+    
+    <ScrollView 
+        android:layout_width="fill_parent"
+    android:layout_height="match_parent" 
+        android:id="@+id/theframeforcelebritydesc"
+        android:layout_toRightOf="@id/thecelebrityimage"
+        android:paddingLeft="4dp"
+        >
+    
+        
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical">
+    
+
+     
+    
+    
+        <TextView
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:id="@+id/thecelebdesc"
+			android:layout_marginTop="8dp"
+			android:textColor="#7D0000"        	
+        	android:textSize="@dimen/moviedesctextsize"
+        	android:lineSpacingMultiplier="1.3"
+        	android:paddingLeft="4dp"
+        	android:gravity="fill_horizontal"
+            ></TextView>
+        
+    
+   
+         
+         
+  
+     
+     
+    
+     </RelativeLayout>
+     </ScrollView>
+   <ProgressBar 
+			android:id="@+id/progressBarcelebrity"	
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true" 
+			android:visibility="gone"
+			 android:indeterminate="true"
+			
+		/>
+</RelativeLayout>

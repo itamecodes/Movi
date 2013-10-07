@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.itamecodes.moviepot.R;
@@ -61,7 +60,7 @@ public class SimilarMovieActivity extends BaseActivity {
 	    public void onGridItemClicked(GridClickedObject goc){
 		  
 	      String themovieidclicked=goc.getId();
-	    	Intent detailIntent = new Intent(this, MovieDetailActivityNew.class);
+	    	Intent detailIntent = new Intent(this, MovieDetailActivityLatest.class);
 	        detailIntent.putExtra(MovieDetailFragment.MOVIE_ID, themovieidclicked);
 	        startActivity(detailIntent);
 	      

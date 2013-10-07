@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.itamecodes.moviepot"
-    android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionCode="3"
+    android:versionName="1.2" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -31,7 +31,7 @@
                 android:value="Home" />
         </activity>
          <activity
-            android:name=".mainapp.MovieDetailActivityNew"
+            android:name=".mainapp.MovieDetailActivityLatest"
             android:label="@string/movie_detail_activity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -52,7 +52,6 @@
          </activity> 
          <activity 
              android:name=".mainapp.PlayVideoActivity"
-             android:screenOrientation="landscape"  
               android:label="@string/celebrity_detail_activity"
              >
              

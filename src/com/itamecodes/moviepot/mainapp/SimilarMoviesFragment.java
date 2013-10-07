@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.itamecodes.moviepot.R;
 import com.itamecodes.moviepot.adapters.ImageTextAdapter;
@@ -31,7 +32,7 @@ public class SimilarMoviesFragment extends BaseFragment implements
 	int page = 1;
 	static final String TAG = "SimilarMoviesFragment";
 	ProgressBar progbar;
-
+    TextView nosimilarmovies;
 	public SimilarMoviesFragment() {
 
 	}
@@ -61,6 +62,7 @@ public class SimilarMoviesFragment extends BaseFragment implements
 			Bundle icic) {
 		View v = inflater.inflate(R.layout.thegrid, container, false);
 		final GridView gv = (GridView) v.findViewById(R.id.thegridview);
+		nosimilarmovies=(TextView)v.findViewById(R.id.textforsearch);
 		gv.setAdapter(upAd);
 		Log.v(TAG, "2");
 		gv.setOnScrollListener(this);
@@ -107,12 +109,22 @@ public class SimilarMoviesFragment extends BaseFragment implements
 	public void onLoadFinished(
 			Loader<ArrayList<HashMap<String, String>>> theLoader,
 			ArrayList<HashMap<String, String>> data) {
-
-		String totalpages = data.get(0).get("totalpages");
-		total_pages = Integer.parseInt(totalpages);
-		upAd.clear();
-		upAd.addAll(data);
-		progbar.setVisibility(View.GONE);
+		try{
+			String totalpages = data.get(0).get("totalpages");
+			total_pages = Integer.parseInt(totalpages);
+			if(data.isEmpty()){
+				nosimilarmovies.setVisibility(View.VISIBLE);
+				nosimilarmovies.setText("No similar movies found");
+			}
+			upAd.clear();
+			upAd.addAll(data);
+			progbar.setVisibility(View.GONE);
+			
+		}catch(Exception e){
+			nosimilarmovies.setVisibility(View.VISIBLE);
+			nosimilarmovies.setText("No similar movies found");
+		}
+		
 	}
 
 	@Override

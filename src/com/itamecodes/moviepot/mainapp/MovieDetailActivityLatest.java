@@ -1,5 +1,14 @@
 package com.itamecodes.moviepot.mainapp;
 
+import com.itamecodes.moviepot.R;
+import com.itamecodes.moviepot.eventbus.EventBus;
+import com.itamecodes.moviepot.eventobjects.GridClickedObject;
+import com.itamecodes.moviepot.eventobjects.ReviewsNeeded;
+import com.itamecodes.moviepot.mainapp.CelebrityDetailActivity.SectionsPagerAdapter;
+import com.itamecodes.moviepot.utils.CelebrityItemClicked;
+import com.itamecodes.moviepot.utils.TrailerNeeded;
+import com.squareup.otto.Subscribe;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
@@ -10,23 +19,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.MenuItem;
 
-import com.itamecodes.moviepot.R;
-import com.itamecodes.moviepot.eventbus.EventBus;
-import com.itamecodes.moviepot.eventobjects.CharClickedObject;
-import com.squareup.otto.Subscribe;
-
-public class CelebrityDetailActivity extends BaseActivity implements
-		ActionBar.TabListener {
-
+public class MovieDetailActivityLatest extends BaseActivity implements ActionBar.TabListener {
 	SectionsPagerAdapter mSectionsPagerAdapter;
-
-	/**
-	 * The {@link ViewPager} that will host the section contents.
-	 */
+	
 	ViewPager mViewPager;
-	static final String TAG="CelebrityDetailloader";
+	static final String TAG="MovieDetailloader";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,15 +67,24 @@ public class CelebrityDetailActivity extends BaseActivity implements
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == android.R.id.home) {
-			NavUtils.navigateUpTo(this, new Intent(this, MainActivity.class));
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
+	public void onTabReselected(Tab tab, FragmentTransaction arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction arg1) {
+		mViewPager.setCurrentItem(tab.getPosition());
+		
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 	public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 
 		public SectionsPagerAdapter(FragmentManager fm) {
@@ -86,23 +95,23 @@ public class CelebrityDetailActivity extends BaseActivity implements
 		public Fragment getItem(int i) {
 			switch (i) {
 			case 0: {
-				CelebrityFragment fragment = CelebrityFragment
+				MovieDetailFragment fragment = MovieDetailFragment
 						.newInstance(getIntent().getStringExtra(
-								CelebrityFragment.CELEBRITY_ID));
+								MovieDetailFragment.MOVIE_ID));
 				return fragment;
 			}
 			case 1: {
 				
-				CharacterFragment fragment = CharacterFragment
+				MovieCastFragment fragment = MovieCastFragment
 						.newInstance(getIntent().getStringExtra(
-								CelebrityFragment.CELEBRITY_ID));
+								MovieDetailFragment.MOVIE_ID));
 				return fragment;
 			}
 			case 2: {
 				
-				CelebrityImageGallery fragment = CelebrityImageGallery
+				SimilarMoviesFragment fragment = SimilarMoviesFragment
 						.newInstance(getIntent().getStringExtra(
-								CelebrityFragment.CELEBRITY_ID));
+								MovieDetailFragment.MOVIE_ID));
 				return fragment;
 			}
 			
@@ -121,40 +130,45 @@ public class CelebrityDetailActivity extends BaseActivity implements
 		public CharSequence getPageTitle(int position) {
 			switch (position) {
 			case 0:
-				return getString(R.string.celebrity).toUpperCase();
+				return getString(R.string.movie_detail_activity).toUpperCase();
 			case 1:
-				return getString(R.string.credits).toUpperCase();
+				return getString(R.string.cast).toUpperCase();
 			case 2:
-				return getString(R.string.gallery).toUpperCase();
+				return getString(R.string.viewsimil).toUpperCase();
 			
 			}
 			return null;
 		}
 	}
-
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		mViewPager.setCurrentItem(tab.getPosition());
-
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-
-	}
 	
-	 @Override
+	
+	 @Subscribe
+	    public void onGridItemClicked(GridClickedObject goc){
+		 Log.v("viveksimilar",""+goc.getId());
+	     String themovieidclicked=goc.getId();
+	     Intent detailIntent = new Intent(this, MovieDetailActivityLatest.class);
+	     detailIntent.putExtra(MovieDetailFragment.MOVIE_ID, themovieidclicked);
+	     startActivity(detailIntent);
+	      
+	    }
+	 @Subscribe
+	 public void onCelebrityItemClicked(CelebrityItemClicked goc){
+	    	String thecelebidclicked=goc.getItemClickedId();
+	    	
+	    	Intent detailIntent = new Intent(this, CelebrityDetailActivity.class);
+	        detailIntent.putExtra(CelebrityFragment.CELEBRITY_ID, thecelebidclicked);
+	        startActivity(detailIntent);
+	    }
+	 
+	 @Subscribe
+	  public void onTrailerNeeded(TrailerNeeded goc){
+	    	String thetraileridclicked=goc.getTrailerId();
+	    	Intent theintent=new Intent(this,PlayVideoActivity.class);
+	    	theintent.putExtra("videoid", thetraileridclicked);
+	    	Log.v("videoid",thetraileridclicked+" intent");
+	    	startActivity(theintent);
+	    }
+	  @Override
 	    public void onResume() {
 	        super.onResume();
 	        EventBus.getInstance().register(this);
@@ -167,13 +181,13 @@ public class CelebrityDetailActivity extends BaseActivity implements
 	      }
 	    
 	    @Subscribe
-	    public void onCharItemClicked(CharClickedObject goc){
-	    	String themovieidclicked=goc.getId();
-	    	
-	    	Intent detailIntent = new Intent(this, MovieDetailActivityLatest.class);
-	        detailIntent.putExtra(MovieDetailFragment.MOVIE_ID, themovieidclicked);
-	        startActivity(detailIntent);
-	    }
-	    
+		  public void onReviewsNeeded(ReviewsNeeded goc){
+		    	String imdbid=goc.getimdbId();
+		    	Intent intent = new Intent(this, ReviewsActivity.class);
+		    	intent.putExtra("imdb",imdbid);
+			    startActivity(intent);
+		    }
+	   
+	
 
 }

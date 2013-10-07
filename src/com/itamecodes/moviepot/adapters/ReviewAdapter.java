@@ -3,10 +3,12 @@ package com.itamecodes.moviepot.adapters;
 import java.util.HashMap;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.itamecodes.moviepot.R;
@@ -44,7 +46,15 @@ public class ReviewAdapter extends ArrayAdapter<HashMap<String,String>>{
 		if(ITCApplication.isNotNullNotEmptyNotWhiteSpaceOnly(thequote)){
 			((TextView)v.findViewById(R.id.thereviewtext)).setText(thequote);
 		}
-		
+		if(!TextUtils.isEmpty(thefreshness)){
+			if(thefreshness.equalsIgnoreCase("fresh")){
+				((ImageView)v.findViewById(R.id.rotfresh)).setBackgroundResource(R.drawable.fresh);
+			}
+			if(thefreshness.equalsIgnoreCase("rotten")){
+				((ImageView)v.findViewById(R.id.rotfresh)).setBackgroundResource(R.drawable.rotten);
+			}
+			
+		}
 		if(ITCApplication.isNotNullNotEmptyNotWhiteSpaceOnly(critic)){
 			((TextView)v.findViewById(R.id.thereviewauthor)).setText(critic);
 		}

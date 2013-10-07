@@ -60,7 +60,7 @@ public class SearchActivity extends BaseActivity {
 	    public void onGridItemClicked(GridClickedObject goc){
 	      String themovieidclicked=goc.getId();
 	    	
-	    	Intent detailIntent = new Intent(this, MovieDetailActivityNew.class);
+	    	Intent detailIntent = new Intent(this, MovieDetailActivityLatest.class);
 	        detailIntent.putExtra(MovieDetailFragment.MOVIE_ID, themovieidclicked);
 	        startActivity(detailIntent);
 	      

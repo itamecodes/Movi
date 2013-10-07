@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/theimage"
          android:layout_width="@dimen/iconwidth"
-    android:layout_height="@dimen/iconwidth"
+         android:layout_height="@dimen/iconwidth"
         android:contentDescription="@string/thumb"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"

@@ -78,6 +78,8 @@ public class SimilarMoviesLoader extends WrappedAsyncTaskLoader<ArrayList<HashMa
 			Log.v(TAG,"filenotfound"+e.getClass()+"--"+e.getMessage());
 		}catch (IOException e) {
 			Log.v(TAG,"ioex"+e.getClass()+"--"+e.getMessage());
+		}catch(Exception ex){
+			
 		}
 				
 		return al;
